@@ -10,6 +10,7 @@ const Header = () => {
 
   const isHome = loc.pathname === "/";
   const isProfile = loc.pathname === "/profile";
+  const isJobDetails = loc.pathname.startsWith("/job/");
   const title = isHome ? "" : (isProfile ? "Profile" : "Job Description");
 
   return (
@@ -60,6 +61,8 @@ const BottomDock = () => {
 };
 
 export default function App() {
+    const loc = useLocation();
+  const hideBottomDock = loc.pathname.startsWith("/job/");
   return (
     <div className="app">
       <Header />
@@ -71,7 +74,7 @@ export default function App() {
         </Routes>
       </main>
 
-      <BottomDock />
+          {!hideBottomDock && <BottomDock />}
     </div>
   );
 }
