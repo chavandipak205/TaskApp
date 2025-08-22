@@ -24,6 +24,7 @@ const Progress = ({ percent }) => {
 };
 
 
+
 export default function Profile() {
   const [profile, setProfile] = useState(loadProfile());
   const [editingContact, setEditingContact] = useState(false);
@@ -92,6 +93,10 @@ const percent = useMemo(() => {
 
   const removeExp = (id) =>
     setExperiences((exps) => exps.filter((e) => e.id !== id));
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
   return (
     <div className="screen">

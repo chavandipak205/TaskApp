@@ -9,8 +9,7 @@ const Header = () => {
   const nav = useNavigate();
 
   const isHome = loc.pathname === "/";
-  const isProfile = loc.pathname === "/profile";
-  const isJobDetails = loc.pathname.startsWith("/job/");
+  const isProfile = loc.pathname === "/profile"; 
   const title = isHome ? "" : (isProfile ? "Profile" : "Job Description");
 
   return (
