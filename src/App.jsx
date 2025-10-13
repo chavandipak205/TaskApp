@@ -3,6 +3,7 @@ import { Routes, Route, NavLink, useLocation, useNavigate } from "react-router-d
 import Home from "./pages/Home.jsx";
 import JobDetails from "./pages/JobDetails.jsx";
 import Profile from "./pages/Profile.jsx";
+ 
 
 const Header = () => {
   const loc = useLocation();
@@ -65,6 +66,7 @@ export default function App() {
   return (
     <div className="app">
       <Header />
+     
       <main className="app-main app-frame">
         <Routes>
           <Route path="/" element={<Home />} />
